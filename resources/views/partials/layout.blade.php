@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    
+
     @yield('content')
 
     <div class="footer">

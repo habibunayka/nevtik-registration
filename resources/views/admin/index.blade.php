@@ -2,15 +2,21 @@
 
 @section('content')
 
-    <a href="{{ route('admin.create') }}" class="btn btn-primary">Create New Post</a>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <a href="{{ route('admin.create') }}" class="btn btn-primary">Create New Post</a>
+        <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+            @csrf
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </div>
 
     @if(session('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-success my-5">
             {{ session('success') }}
         </div>
     @endif
 
-    <table class="table">
+    <table class="table mt-2">
         <thead>
             <tr>
                 <th>Name</th>
